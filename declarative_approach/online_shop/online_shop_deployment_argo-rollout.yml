@@ -7,10 +7,10 @@ metadata:
 spec:
   replicas: 4
   strategy:
-  blueGreen:
-    activeService: online-shop-active
-    previewService: online-shop-preview
-    autoPromotionEnabled: false
+    blueGreen:
+      activeService: online-shop-active
+      previewService: online-shop-preview
+      autoPromotionEnabled: false
   selector:
     matchLabels:
       app: online-shop
