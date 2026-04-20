@@ -28,7 +28,7 @@ spec:
             cpu: "500m"
 
  strategy:
-   blueGreen:
-    activeService: online-shop-active
-    previewService: online-shop-preview
-    autoPromotionEnabled: false
+ blueGreen:
+   activeService: online-shop-active
+   previewService: online-shop-preview
+   autoPromotionEnabled: false
