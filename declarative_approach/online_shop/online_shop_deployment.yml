@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: online-shop
-        image: swapnilgithub23/online_shop:latest
+        image: swapnilgithub23/tws-online-shop-app-demo:latest
         ports:
         - containerPort: 3000
         resources:
