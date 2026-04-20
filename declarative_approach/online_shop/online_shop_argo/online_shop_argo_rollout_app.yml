@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: online-shop-rollout
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/swapnilgithub23/argocd-demos.git
+    targetRevision: main
+    path: declarative_approach/online_shop/rollout  # <-- Folder with only rollout YAMLs
+    directory:
+      recurse: true
+  destination:
+    server: https://172.31.26.237:33893
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
