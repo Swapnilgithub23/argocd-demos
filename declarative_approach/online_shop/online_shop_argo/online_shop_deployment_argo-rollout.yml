@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: online-shop
-        image: swapnildocker23/online_shop:v1.0.0
+        image: swapnildocker23/online_shop:v1.0.1
         ports:
         - containerPort: 3000
         resources:
