@@ -9,8 +9,6 @@ spec:
     repoURL: https://github.com/swapnilgithub23/argocd-demos.git
     targetRevision: main
     path: declarative_approach/online_shop/online_shop_argo  # <-- Folder with only rollout YAMLs
-    directory:
-      recurse: true
   destination:
     server: https://172.31.26.237:33893
     namespace: default
