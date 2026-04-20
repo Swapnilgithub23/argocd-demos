@@ -5,12 +5,12 @@ metadata:
   labels:
     app: online-shop
 spec:
-  replicas: 3
+  replicas: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
+      maxUnavailable: 5
+      maxSurge: 5
   selector:
     matchLabels:
       app: online-shop
@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: online-shop
-        image: amitabhdevops/online_shop:latest
+        image: amitabhdevops/online_shop:v1.0.0
         ports:
         - containerPort: 3000
         resources:
