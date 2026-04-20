@@ -6,6 +6,11 @@ metadata:
     app: online-shop
 spec:
   replicas: 4
+  strategy:
+  blueGreen:
+    activeService: online-shop-active
+    previewService: online-shop-preview
+    autoPromotionEnabled: false
   selector:
     matchLabels:
       app: online-shop
@@ -27,8 +32,4 @@ spec:
             memory: "256Mi"
             cpu: "500m"
 
- strategy:
- blueGreen:
-   activeService: online-shop-active
-   previewService: online-shop-preview
-   autoPromotionEnabled: false
+ 
