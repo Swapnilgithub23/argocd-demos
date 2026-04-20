@@ -6,11 +6,6 @@ metadata:
     app: online-shop
 spec:
   replicas: 6
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 3
-      maxUnavailable: 3
   selector:
     matchLabels:
       app: online-shop
