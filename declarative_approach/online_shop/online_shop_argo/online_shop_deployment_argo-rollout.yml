@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: online-shop
+  labels:
+    app: online-shop
+spec:
+  replicas: 4
+  strategy:
+    blueGreen:
+      activeService: online-shop-active
+      previewService: online-shop-preview
+      autoPromotionEnabled: false
+  selector:
+    matchLabels:
+      app: online-shop
+  template:
+    metadata:
+      labels:
+        app: online-shop
+    spec:
+      containers:
+      - name: online-shop
+        image: swapnildocker23/online_shop:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
